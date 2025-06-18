@@ -1,6 +1,6 @@
 app:
   title: Company Catalog App
-  baseUrl: https://backstage-709225383020.us-central1.run.app
+  baseUrl: http://localhost:3000
 
 organization:
   name: Company
@@ -12,7 +12,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: https://backstage-709225383020.us-central1.run.app
+  baseUrl: http://localhost:7007
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
@@ -20,7 +20,7 @@ backend:
   csp:
     default-src: ["'self'", "http:", "https:"]
   cors:
-    origin: https://backstage-709225383020.us-central1.run.app
+    origin: http://localhost:3000
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
   # This is for local development only, it is not recommended to use this in production
@@ -73,9 +73,9 @@ auth:
     guest: {}
     github:
       development:
-        clientId: Ov23ligpgjm0NZcq3w95
-        clientSecret: 03d4ff13caad0bec780adfca1e39d56a81f46a8c
-        callbackUrl: https://backstage-709225383020.us-central1.run.app/api/auth/github/handler/frame
+        clientId: Ov23lipvP4qSfbx7GBpg
+        clientSecret: 50df8d73f71876a29137db088c93c9c27fc45542
+        callbackUrl: http://localhost:7007/api/auth/github/handler/frame
         signIn:
           resolvers:
             # Matches the GitHub username with the Backstage user entity name.
@@ -83,10 +83,10 @@ auth:
             - resolver: usernameMatchingUserEntityName
     gitlab:
       development:
-        clientId: ab2b26707f8f73bd2cb9dcce505d1b40e8d26a7da82b36969158117a9dbb2ddd
-        clientSecret: gloas-d1c191336a633183bad67daea788ffd076a89ca67bbd22fa115b97443c11e65b
+        clientId: bbf6f396b2e956b24bbea33866c5282dafc20a07f36c1a4f2397fcd53b4fa201
+        clientSecret: gloas-730c0cebb3457107b300b19a2c6f9fc8473e2ef5663843bb41cafb6b5b72941b
         audience: https://gitlab.com
-        callbackUrl: https://backstage-709225383020.us-central1.run.app/api/auth/gitlab/handler/frame
+        callbackUrl: http://localhost:7007/api/auth/gitlab/handler/frame
         
 
 scaffolder:
@@ -114,10 +114,11 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
+
     - type: url
       target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/org.yaml
       rules:
-        - allow: [User, Group] 
+        - allow: [User, Group]
 
     ## Uncomment these lines to add more example data
     # - type: url
