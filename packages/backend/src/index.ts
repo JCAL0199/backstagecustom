@@ -45,7 +45,7 @@ const gitlabGroupAuthResolver = createBackendModule({
                 // 2. Check group membership (better endpoint)
                 const membersRes = await fetch(
                   `https://gitlab.com/api/v4/groups/${groupId}/members/${user.id}`,
-                  { headers: { Authorization: `Bearer glpat-HbFdX7pUzmRjad-rhAv9` } }
+                  { headers: { Authorization: `Bearer AQUI VA UN PERSONAL TOKEN` } }
                 );
 
                 if (membersRes.status !== 200) {
@@ -60,7 +60,7 @@ const gitlabGroupAuthResolver = createBackendModule({
                     `Please request access from your group maintainer.`
                   );
                 }
-                
+
                 return ctx.signInWithCatalogUser({
                   filter: {
                     'spec.profile.email': profile.email || user.email || '',
