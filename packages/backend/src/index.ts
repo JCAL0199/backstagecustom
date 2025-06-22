@@ -45,7 +45,7 @@ const gitlabGroupAuthResolver = createBackendModule({
                 // 2. Check group membership (better endpoint)
                 const membersRes = await fetch(
                   `https://gitlab.com/api/v4/groups/${groupId}/members/${user.id}`,
-                  { headers: { Authorization: `Bearer AQUI VA UN PERSONAL TOKEN` } }
+                  { headers: { Authorization: `Bearer glpat-HbFdX7pUzmRjad-rhAv9` } }
                 );
 
                 if (membersRes.status !== 200) {

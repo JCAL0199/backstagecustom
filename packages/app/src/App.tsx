@@ -38,8 +38,15 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 
 import { githubAuthApiRef, gitlabAuthApiRef } from '@backstage/core-plugin-api';
 
+import { HomePage } from './components/home/HomePage';
+import { homePlugin } from '@backstage/plugin-home';
+
+
 const app = createApp({
   apis,
+  plugins: [
+    homePlugin
+  ],
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
@@ -83,7 +90,7 @@ const app = createApp({
 
 const routes = (
   <FlatRoutes>
-    <Route path="/" element={<Navigate to="catalog" />} />
+    <Route path="/" element={<HomePage />} />
     <Route path="/catalog" element={<CatalogIndexPage />} />
     <Route
       path="/catalog/:namespace/:kind/:name"
