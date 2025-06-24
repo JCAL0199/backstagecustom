@@ -1,5 +1,5 @@
 /*import { makeStyles } from '@material-ui/core';*/
-import CustomLogoFull from './superset-logo-horiz.png';
+import CustomLogoFull from './backstage-logo.png';
 
 const LogoFull = () => {
   return (

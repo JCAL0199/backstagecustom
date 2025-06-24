@@ -39,6 +39,9 @@ backend:
         $env: DB_BACKSATAGE_PASSWORD
       database:
         $env: DB_BACKSATAGE_DATABASE
+    pool:
+      min: 2
+      max: 10
   # This is for local development only, it is not recommended to use this in production
   # The production database configuration is stored in app-config.production.yaml
   #database:
@@ -136,19 +139,28 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
-
     - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/org.yaml
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Systems.yaml
       rules:
-        - allow: [User, Group, Catalog]
+        - allow: [User, Group, Catalog, Template]
     - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Systems.yaml
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Groups.yaml
+      rules:
+        - allow: [User, Group, Catalog, Template]
     - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Groups.yaml
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Users.yaml
+      rules:
+        - allow: [User, Group, Catalog, Template]
     - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Users.yaml
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Components.yaml
+      rules:
+        - allow: [User, Group, Catalog, Template]
     - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Components.yaml
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/templates/my-custom-template/template.yaml
+      rules:
+        - allow: [Template]
+  processing:
+    refreshInterval: 100
 
     ## Uncomment these lines to add more example data
     # - type: url
@@ -171,3 +183,4 @@ kubernetes:
 permission:
   # setting this to `false` will disable permissions
   enabled: true
+  
