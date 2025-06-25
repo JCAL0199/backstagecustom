@@ -16,20 +16,24 @@ import {
 } from '@backstage/plugin-auth-node';
 import fetch from 'node-fetch';
 
+import { coreServices } from '@backstage/backend-plugin-api';
+
 const gitlabGroupAuthResolver = createBackendModule({
   pluginId: 'auth',
   moduleId: 'gitlab-group-auth',
   register(reg) {
     reg.registerInit({
-      deps: { providers: authProvidersExtensionPoint },
-      async init({ providers }) {
+      deps: { providers: authProvidersExtensionPoint, config: coreServices.rootConfig},
+      async init({ providers, config}) {
         providers.registerProvider({
           providerId: 'gitlab',
           factory: createOAuthProviderFactory({
             authenticator: gitlabAuthenticator,
             async signInResolver({ profile, result }, ctx) {
-              const groupId = '109548991'; // Replace with your actual group ID
+              const groupId = '109548991';
               const accessToken = result.session.accessToken;
+              const gitlabIntegration = config.getConfigArray('integrations.gitlab')[0];
+              const adminToken = gitlabIntegration.getString('token');
 
               if (!accessToken) {
                 throw new Error('GitLab access token not found');
@@ -45,7 +49,7 @@ const gitlabGroupAuthResolver = createBackendModule({
                 // 2. Check group membership (better endpoint)
                 const membersRes = await fetch(
                   `https://gitlab.com/api/v4/groups/${groupId}/members/${user.id}`,
-                  { headers: { Authorization: `Bearer glpat-HbFdX7pUzmRjad-rhAv9` } }
+                  { headers: { Authorization: `Bearer ${adminToken}` } }
                 );
 
                 if (membersRes.status !== 200) {
@@ -56,8 +60,8 @@ const gitlabGroupAuthResolver = createBackendModule({
                   ).then(r => r.json());
                   
                   throw new Error(
-                    `You must be a member of "${groupInfo.name}" (${groupInfo.full_path}) GitLab group to access this application. ` +
-                    `Please request access from your group maintainer.`
+                    `Deberias ser parte del "${groupInfo.name}" (${groupInfo.full_path}) para poder acceder a la aplicación. ` +
+                    `Por favor pide acceso a al administrador del grupo de la empresa.`
                   );
                 }
 

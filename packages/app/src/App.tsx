@@ -41,6 +41,7 @@ import { githubAuthApiRef, gitlabAuthApiRef } from '@backstage/core-plugin-api';
 import { HomePage } from './components/home/HomePage';
 import { homePlugin } from '@backstage/plugin-home';
 
+import { SignInProviderConfig } from '@backstage/core-components'
 
 const app = createApp({
   apis,
@@ -65,26 +66,33 @@ const app = createApp({
     });
   },
   components: {
-    SignInPage: props => (
-      <SignInPage
-        {...props}
-        auto
-        providers={[
-          {
-            id: 'github-auth-provider',
-            title: 'GitHub',
-            message: 'Sign in using GitHub',
-            apiRef: githubAuthApiRef,
-          },
-          {
-            id: 'gitlab-auth-provider',
-            title: 'GitLab',
-            message: 'Sign in using GitLab',
-            apiRef: gitlabAuthApiRef,
-          },
-        ]}
-      />
-    ),
+    SignInPage: props => {
+      const githubProvider: SignInProviderConfig = {
+        id: 'github-auth-provider',
+        title: 'GitHub',
+        message: 'Inicia sesión con tu cuenta de GitHub',
+        apiRef: githubAuthApiRef
+      };
+
+      const gitlabProvider: SignInProviderConfig = {
+        id: 'gitlab-auth-provider',
+        title: 'GitLab',
+        message: 'Inicia sesión con tu cuenta de GitLab',
+        apiRef: gitlabAuthApiRef,
+      };
+
+      return (
+        <SignInPage
+          {...props}
+          providers={[
+            githubProvider,
+            gitlabProvider,
+          ]}
+          title="Bienvenido"
+          align="center"
+        />
+      );
+    },
   },
 });
 
