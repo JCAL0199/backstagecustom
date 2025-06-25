@@ -39,9 +39,6 @@ backend:
         $env: DB_BACKSATAGE_PASSWORD
       database:
         $env: DB_BACKSATAGE_DATABASE
-    pool:
-      min: 2
-      max: 10
   # This is for local development only, it is not recommended to use this in production
   # The production database configuration is stored in app-config.production.yaml
   #database:

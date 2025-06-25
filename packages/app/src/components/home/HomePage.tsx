@@ -1,4 +1,3 @@
-import React from 'react';
 import { HomePageToolkit, HomePageCompanyLogo } from '@backstage/plugin-home';
 import { Content, Page } from '@backstage/core-components';
 import { HomePageSearchBar } from '@backstage/plugin-search';

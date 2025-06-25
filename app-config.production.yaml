@@ -97,10 +97,6 @@ catalog:
       rules:
         - allow: [User, Group]
     - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/org.yaml
-      rules:
-        - allow: [User, Group, Catalog]
-    - type: url
       target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Systems.yaml
     - type: url
       target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Groups.yaml
