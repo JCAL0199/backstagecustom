@@ -97,15 +97,25 @@ catalog:
       rules:
         - allow: [User, Group]
     - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Systems.yaml
-    - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Groups.yaml
-    - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Users.yaml
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Systems.yaml
       rules:
         - allow: [User, Group, Catalog, Template]
     - type: url
-      target: https://raw.githubusercontent.com/organizationjc/backstage-catalog/main/catalog/entities/Components.yaml
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Groups.yaml
+      rules:
+        - allow: [User, Group, Catalog, Template]
+    - type: url
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Users.yaml
+      rules:
+        - allow: [User, Group, Catalog, Template]
+    - type: url
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Components.yaml
+      rules:
+        - allow: [User, Group, Catalog, Template]
+    - type: url
+      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/templates/my-custom-template/template.yaml
+      rules:
+        - allow: [Template]
   useUrlReadersSearch: true
   
 

@@ -43,6 +43,11 @@ import { homePlugin } from '@backstage/plugin-home';
 
 import { SignInProviderConfig } from '@backstage/core-components'
 
+//import { myTheme } from './themes/MyThheme';
+
+//import LightIcon from '@material-ui/icons/WbSunny';
+//import { UnifiedThemeProvider} from '@backstage/theme';
+
 const app = createApp({
   apis,
   plugins: [
@@ -94,6 +99,15 @@ const app = createApp({
       );
     },
   },
+  //themes: [{
+  //  id: 'my-theme',
+  //  title: 'My Custom Theme',
+  //  variant: 'light',
+  //  icon: <LightIcon />,
+  //  Provider: ({ children }) => (
+  //    <UnifiedThemeProvider theme={myTheme} children={children} />
+  //  ),
+  //}]
 });
 
 const routes = (
