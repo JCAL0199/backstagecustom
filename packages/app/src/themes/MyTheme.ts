@@ -12,7 +12,7 @@ const pageThemesFontColorOverride: Record<string, PageTheme> = {};
 Object.keys(defaultPageThemes).map(key => {
   pageThemesFontColorOverride[key] = {
     ...defaultPageThemes[key],
-    fontColor: '#172B4D',
+    fontColor: '#04245B',
   };
 });
 
@@ -23,7 +23,7 @@ export const myTheme = createUnifiedTheme({
       primary: {
         main: '#0052CC',
         light: '#4C9AFF',
-        dark: '#172B4D',
+        dark: '#04245B',
       },
       secondary: {
         main: '#FF5630',
@@ -39,7 +39,7 @@ export const myTheme = createUnifiedTheme({
         500: '#42526E',
         600: '#344563',
         700: '#253858',
-        800: '#172B4D',
+        800: '#04245B',
         900: '#091E42',
       },
       error: {
@@ -64,7 +64,7 @@ export const myTheme = createUnifiedTheme({
       },
       navigation: {
         ...palettes.light.navigation,
-        background: '#172B4D',
+        background: '#04245B',
         color: '#FFFFFF',
         indicator: '#2684FF',
         navItem: {
@@ -119,17 +119,17 @@ export const myTheme = createUnifiedTheme({
       styleOverrides: {
         header: ({ theme }) => ({
           backgroundImage:'unset',
-          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.78);'
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.78);',
         }),
         title: ({ theme }) => ({
-          color: '#172B4D',
+          color: '#04245B',
           fontWeight: 900,
         }),
         subtitle: ({ theme }) => ({
-          color: '#172B4D',
+          color: '#04245B',
         }),
         type: ({ theme }) => ({
-          color: '#172B4D',
+          color: '#04245B',
         }),
       },
     },
@@ -146,20 +146,6 @@ export const myTheme = createUnifiedTheme({
         icon: {
           '& path': {
             fill: '#FFFFFF',
-          },
-        },
-      },
-    },
-    BackstageTable: {
-      styleOverrides: {
-        root: {
-          '&> :first-child': {
-            borderBottom: '1px solid #D5D5D5',
-            boxShadow: 'none',
-          },
-          '& th': {
-            borderTop: 'none',
-            textTransform: 'none !important',
           },
         },
       },
@@ -288,6 +274,6 @@ export const myTheme = createUnifiedTheme({
           textTransform: 'none',
         }
       },
-    }
+    },
   },
 });
