@@ -53,3 +53,4 @@ site
 e2e-test-report/
 
 env-vars.yaml
+env-vars-azure.yaml
