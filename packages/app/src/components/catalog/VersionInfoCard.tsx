@@ -7,9 +7,9 @@ export const VersionInfoCard = () => {
   const { entity } = useEntity();
   const annotations = entity.metadata.annotations || {};
 
-  const version = annotations['service-flask/version'];
-  const deployedAt = annotations['service-flask/deployed-at'];
-  const commit = annotations['service-flask/git-commit'];
+  const version = annotations['version'];
+  const deployedAt = annotations['deployed-at'];
+  const commit = annotations['git-commit'];
 
   return (
     <InfoCard title="Información de despliegue">

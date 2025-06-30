@@ -109,10 +109,6 @@ catalog:
       rules:
         - allow: [User, Group, Catalog, Template]
     - type: url
-      target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/entities/Components.yaml
-      rules:
-        - allow: [User, Group, Catalog, Template]
-    - type: url
       target: https://github.com/organizationjc/backstage-catalog/blob/main/catalog/templates/my-custom-template/template.yaml
       rules:
         - allow: [Template]

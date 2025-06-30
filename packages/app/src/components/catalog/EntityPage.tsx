@@ -176,10 +176,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/api" title="API">
       <Grid container spacing={3} alignItems="stretch">
-        <Grid item md={6}>
+        <Grid item md={12} xs={12}>
           <EntityProvidedApisCard />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={12} xs={12}>
           <EntityConsumedApisCard />
         </Grid>
       </Grid>
@@ -187,10 +187,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/dependencies" title="Dependencies">
       <Grid container spacing={3} alignItems="stretch">
-        <Grid item md={6}>
+        <Grid item md={12} xs={12}>
           <EntityDependsOnComponentsCard variant="gridItem" />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={12} xs={12}>
           <EntityDependsOnResourcesCard variant="gridItem" />
         </Grid>
       </Grid>

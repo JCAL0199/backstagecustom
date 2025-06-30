@@ -12,7 +12,7 @@ const pageThemesFontColorOverride: Record<string, PageTheme> = {};
 Object.keys(defaultPageThemes).map(key => {
   pageThemesFontColorOverride[key] = {
     ...defaultPageThemes[key],
-    fontColor: '#04245B',
+    fontColor: '#10151E',
   };
 });
 
@@ -21,9 +21,9 @@ export const myTheme = createUnifiedTheme({
     palette: {
       ...palettes.light,
       primary: {
-        main: '#0052CC',
+        main: '#264675',
         light: '#4C9AFF',
-        dark: '#04245B',
+        dark: '#10151E',
       },
       secondary: {
         main: '#FF5630',
@@ -39,7 +39,7 @@ export const myTheme = createUnifiedTheme({
         500: '#42526E',
         600: '#344563',
         700: '#253858',
-        800: '#04245B',
+        800: '#10151E',
         900: '#091E42',
       },
       error: {
@@ -64,7 +64,7 @@ export const myTheme = createUnifiedTheme({
       },
       navigation: {
         ...palettes.light.navigation,
-        background: '#04245B',
+        background: '#10151E',
         color: '#FFFFFF',
         indicator: '#2684FF',
         navItem: {
@@ -120,16 +120,17 @@ export const myTheme = createUnifiedTheme({
         header: ({ theme }) => ({
           backgroundImage:'unset',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.78);',
+          lineHeight: 1.9
         }),
         title: ({ theme }) => ({
-          color: '#04245B',
+          color: '#10151E',
           fontWeight: 900,
         }),
         subtitle: ({ theme }) => ({
-          color: '#04245B',
+          color: '#10151E',
         }),
         type: ({ theme }) => ({
-          color: '#04245B',
+          color: '#10151E',
         }),
       },
     },
@@ -272,6 +273,9 @@ export const myTheme = createUnifiedTheme({
       styleOverrides: {
         button: {
           textTransform: 'none',
+        },
+        h1:  {
+          lineHeight: 1.9
         }
       },
     },

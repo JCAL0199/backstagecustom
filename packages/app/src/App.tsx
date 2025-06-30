@@ -44,6 +44,7 @@ import { SignInProviderConfig } from '@backstage/core-components';
 import { myTheme } from './themes/MyTheme';
 import LightIcon from '@material-ui/icons/WbSunny';
 import { UnifiedThemeProvider} from '@backstage/theme';
+import { CustomLoginPage } from './components/custom/LoginPage';
 
 const app = createApp({
   apis,
@@ -68,6 +69,7 @@ const app = createApp({
     });
   },
   components: {
+    /*SignInPage: CustomLoginPage,*/
     SignInPage: props => {
       const githubProvider: SignInProviderConfig = {
         id: 'github-auth-provider',
@@ -88,7 +90,6 @@ const app = createApp({
           {...props}
           providers={[
             githubProvider,
-            gitlabProvider,
           ]}
           title="Bienvenido"
           align="center"
