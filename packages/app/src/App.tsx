@@ -97,7 +97,7 @@ const app = createApp({
       );
     },
   },
-  themes: [{
+  /*themes: [{
     id: 'my-theme',
     title: 'My Custom Theme',
     variant: 'light',
@@ -105,7 +105,7 @@ const app = createApp({
     Provider: ({ children }) => (
       <UnifiedThemeProvider theme={myTheme} children={children} />
     ),
-  }]
+  }]*/
 });
 
 const routes = (

@@ -60,10 +60,10 @@ integrations:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
     #   token: ${GHE_TOKEN}
-  gitlab:
-    - host: gitlab.com
-      token:
-        $env: TOKEN_GITLAB
+  #gitlab:
+  #  - host: gitlab.com
+  #    token:
+  #      $env: TOKEN_GITLAB
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
@@ -111,15 +111,15 @@ auth:
             # Matches the GitHub username with the Backstage user entity name.
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
             - resolver: usernameMatchingUserEntityName
-    gitlab:
-      development:
-        audience: https://gitlab.com
-        clientId:
-          $env: CLIENTID_GITLAB
-        clientSecret:
-          $env: CLIENTSECRET_GITLAB
-        callbackUrl:
-          $env: CALLBACKURL_GITLAB
+    #itlab:
+    #  development:
+    #    audience: https://gitlab.com
+    #    clientId:
+    #      $env: CLIENTID_GITLAB
+    #    clientSecret:
+    #      $env: CLIENTSECRET_GITLAB
+    #    callbackUrl:
+    #      $env: CALLBACKURL_GITLAB
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 

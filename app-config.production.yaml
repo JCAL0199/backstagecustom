@@ -65,15 +65,15 @@ auth:
             # Matches the GitHub username with the Backstage user entity name.
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
             - resolver: usernameMatchingUserEntityName
-    gitlab:
-      development:
-        audience: https://gitlab.com
-        clientId:
-          $env: CLIENTID_GITLAB_PROD
-        clientSecret:
-          $env: CLIENTSECRET_GITLAB_PROD
-        callbackUrl:
-          $env: CALLBACKURL_GITLAB_PROD
+    #gitlab:
+    #  development:
+    #    audience: https://gitlab.com
+    #    clientId:
+    #      $env: CLIENTID_GITLAB_PROD
+    #    clientSecret:
+    #      $env: CLIENTSECRET_GITLAB_PROD
+    #    callbackUrl:
+    #      $env: CALLBACKURL_GITLAB_PROD
 
 catalog:
   # Overrides the default list locations from app-config.yaml as these contain example data.
